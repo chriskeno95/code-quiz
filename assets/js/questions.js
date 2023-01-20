@@ -1,17 +1,17 @@
 var questions = [
     {
         "title": "",
-        "choices": "",
+        "choices": [""],
         "answer": ""
      },
      {
         "title": "",
-        "choices": "",
+        "choices": [""],
         "answer": ""
      },
      {
         "title": "",
-        "choices": "",
+        "choices": [""],
         "answer": ""
      },
      {
