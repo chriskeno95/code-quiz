@@ -10,6 +10,36 @@ let startButton = document.getElementById("start");
 let initialEL = document.getElementById("initials");
 let feedBackEL = document.getElementById("feedback");
 
+function questionClick(){
+    if(this.value !== questions[currentQuestionIndex].answer){
+        time -= 15;
+
+        if(time < 0){
+            time = 0;
+        }
+
+        timerEl.textContent = time;
+
+        feedBackEL.textContent = "wrong"
+    } else {
+        feedBackEL.textContent = "correct!";
+    }
+
+    feedBackEL.setAttribute("class", "feedback");
+
+    setTimeout(function(){
+        feedBackEL.setAttribute("class","feedback hide")
+    }, 1000);
+
+    currentQuestionIndex++;
+
+    if(currentQuestionIndex === questions.length){
+        endQuiz()
+    } else {
+        getQuestions();
+    }
+}
+
 function getQuestions(){
     let currentQuestion = questions[currentQuestionIndex];
 
@@ -33,9 +63,6 @@ function getQuestions(){
     })
 }
 
-function questionClick(){
-
-}
 function endQuiz(){
     clearInterval(timerID);
 
